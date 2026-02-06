@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>SSSL GPT</title>
+    <title>ChatgptClone</title>
     <link rel="stylesheet" href="{% static 'chat.css' %}">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
@@ -381,7 +381,7 @@
                 <div class="welcome-screen">
                     <div class="welcome-container">
                         <div class="welcome-icon">🤖</div>
-                        <h1 class="welcome-title">Welcome to SSSL GPT!</h1>
+                        <h1 class="welcome-title">Welcome to Ai Assistant!</h1>
 
                         <div class="welcome-message">
                             <span class="streaming-text" id="streamingText"></span>
@@ -738,9 +738,6 @@ function preprocessMarkdown(text) {
             // SAFE HEADING SPACING
             fixed = fixed.replace(/([^\n])(\s*#{1,6}\s)/g, "$1\n\n$2");
 
-            // CODE BLOCK FIXES
-            fixed = fixed.replace(/([^\n])()/g, "$1\n\n$2");
-            fixed = fixed.replace(/()([^\n])/g, "$1\n\n$2");
 
             // Convert any # heading → ####
             fixed = fixed.replace(/^\s*#{1,6}\s*(.+)$/gm, "#### $1");
